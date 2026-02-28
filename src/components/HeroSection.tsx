@@ -23,10 +23,10 @@ const HeroSection = () => {
         </motion.div>
 
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6">
-          <StaggeredText text="Building Digital" delay={0.5} />
+          <StaggeredText text="Hello, I'm" delay={0.5} />
           <br />
           <span className="gradient-text">
-            <StaggeredText text="Experiences" delay={0.9} />
+            <StaggeredText text="Areeb" delay={0.9} />
           </span>
         </h1>
 
@@ -46,11 +46,15 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.6 }}
         >
-          <MagneticButton className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg neon-glow-box hover:bg-primary/90 transition-colors">
-            View Projects
+          <MagneticButton>
+            <a href="#projects" className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg neon-glow-box hover:bg-primary/90 transition-colors">
+              View Work
+            </a>
           </MagneticButton>
-          <MagneticButton className="px-8 py-4 glass neon-border rounded-full font-medium text-lg text-foreground hover:bg-primary/10 transition-colors">
-            Get in Touch
+          <MagneticButton>
+            <a href="#booking" className="inline-block px-8 py-4 glass neon-border rounded-full font-medium text-lg text-foreground hover:bg-primary/10 transition-colors">
+              Book a Service
+            </a>
           </MagneticButton>
         </motion.div>
       </div>

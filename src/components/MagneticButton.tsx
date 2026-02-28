@@ -24,9 +24,9 @@ const MagneticButton = ({ children, className = '', onClick }: MagneticButtonPro
   };
 
   return (
-    <motion.button
-      ref={ref}
-      className={`relative transition-transform duration-300 ease-out ${className}`}
+    <motion.div
+      ref={ref as any}
+      className={`relative transition-transform duration-300 ease-out inline-block ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
@@ -34,7 +34,7 @@ const MagneticButton = ({ children, className = '', onClick }: MagneticButtonPro
       whileTap={{ scale: 0.95 }}
     >
       {children}
-    </motion.button>
+    </motion.div>
   );
 };
 

@@ -2,6 +2,7 @@ import AnimatedSection from './AnimatedSection';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Code2, Palette, Zap, Globe } from 'lucide-react';
+import SkillBars from './SkillBars';
 
 const stats = [
   { value: '5+', label: 'Years Experience' },
@@ -39,15 +40,18 @@ const AboutSection = () => {
               Crafting the <span className="gradient-text">future</span> of web
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              I'm a passionate developer who lives at the intersection of design and technology.
+              I'm Areeb — a passionate developer who lives at the intersection of design and technology.
               With expertise in modern web frameworks and 3D graphics, I create digital experiences
               that push boundaries and captivate users.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-8">
               Every project is an opportunity to innovate. From immersive 3D environments
               to performant web applications, I bring ideas to life with clean code
               and meticulous attention to detail.
             </p>
+
+            {/* Skill bars */}
+            <SkillBars />
           </div>
 
           <div ref={ref} className="grid grid-cols-2 gap-4">
