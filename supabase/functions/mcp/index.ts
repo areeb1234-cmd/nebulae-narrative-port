@@ -133,7 +133,7 @@ var list_projects_default = defineTool3({
 
 // src/lib/mcp/tools/send-message.ts
 import { defineTool as defineTool4, ToolError } from "npm:@lovable.dev/mcp-js@3.0.0";
-import { z } from "npm:zod@^4.6.5";
+import { z } from "npm:zod@3.25.76";
 
 // src/lib/mcp/supabase.ts
 import { createClient } from "npm:@supabase/supabase-js@^2.98.0";
@@ -209,7 +209,7 @@ var send_message_default = defineTool4({
 
 // src/lib/mcp/tools/request-booking.ts
 import { defineTool as defineTool5, ToolError as ToolError2 } from "npm:@lovable.dev/mcp-js@3.0.0";
-import { z as z2 } from "npm:zod@^4.6.5";
+import { z as z2 } from "npm:zod@3.25.76";
 var request_booking_default = defineTool5({
   name: "request_booking",
   title: "Request a booking",

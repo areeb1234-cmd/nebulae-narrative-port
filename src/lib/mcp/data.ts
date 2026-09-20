@@ -23,7 +23,7 @@ export const SERVICES = [
   { name: "Consultation", description: "Advice session on architecture, performance, or design." },
 ] as const;
 
-export const BOOKABLE_SERVICES = SERVICES.map((service) => service.name);
+export const BOOKABLE_SERVICES: string[] = SERVICES.map((service) => service.name);
 
 export const PROJECTS = [
   {
