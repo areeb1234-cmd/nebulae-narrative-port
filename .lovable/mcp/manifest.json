@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "sdk_version": "3.0.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "astral-canvas",
+      "version": "0.1.0",
+      "title": "Astral Canvas"
+    },
+    "tools": [
+      {
+        "name": "get_profile",
+        "title": "Get profile",
+        "description": "Get Areeb's public profile: role, public contact details, location, and typical response time.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List the services Areeb offers and that can be booked.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_projects",
+        "title": "List projects",
+        "description": "List the featured projects in Areeb's portfolio with their tech stacks.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "send_message",
+        "title": "Send a message",
+        "description": "Send Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "description": "Sender's full name."
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "maxLength": 255,
+              "description": "Sender's email address."
+            },
+            "subject": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "description": "Short subject line."
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000,
+              "description": "Message body."
+            }
+          },
+          "required": [
+            "name",
+            "email",
+            "subject",
+            "message"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "request_booking",
+        "title": "Request a booking",
+        "description": "Request a service booking with Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "description": "Requester's full name."
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "maxLength": 255,
+              "description": "Requester's email address."
+            },
+            "phone": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20,
+              "description": "Requester's phone number."
+            },
+            "service": {
+              "type": "string",
+              "minLength": 1,
+              "description": "One of the services from list_services."
+            },
+            "booking_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "description": "Requested date as YYYY-MM-DD. Must be a future weekday."
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 1000,
+              "description": "Optional extra details."
+            }
+          },
+          "required": [
+            "full_name",
+            "email",
+            "phone",
+            "service",
+            "booking_date"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
