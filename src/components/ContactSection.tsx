@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import MagneticButton from './MagneticButton';
 import { Send, Mail, MapPin, Phone, Loader2, CheckCircle } from 'lucide-react';
 import { z } from 'zod';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100),
@@ -19,6 +20,7 @@ const ContactSection = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,7 +46,7 @@ const ContactSection = () => {
 
       if (error) throw error;
 
-      toast({ title: 'Message sent!', description: "I'll get back to you soon." });
+      setIsSuccess(true);
       setForm({ name: '', email: '', subject: '', message: '' });
     } catch {
       toast({ title: 'Error', description: 'Something went wrong. Please try again.', variant: 'destructive' });
@@ -79,8 +81,8 @@ const ContactSection = () => {
             </p>
             {[
               { icon: Mail, label: 'alliareeb650@gmail.com', href: 'mailto:alliareeb650@gmail.com' },
-              { icon: Phone, label: '033066528075', href: 'tel:033066528075' },
-              { icon: MapPin, label: 'North Karachi, Sector 11-C, Karachi, Pakistan' },
+               { icon: Phone, label: '03306528075', href: 'tel:03306528075' },
+               { icon: MapPin, label: 'North Karachi, Karachi, Pakistan' },
             ].map((item) => (
               <motion.div
                 key={item.label}
@@ -121,19 +123,57 @@ const ContactSection = () => {
               <textarea placeholder="Your Message" rows={5} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} className={`${inputClass} resize-none`} />
               {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
             </div>
-            <MagneticButton>
-              <button
+             <MagneticButton className="w-full">
+               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-primary text-primary-foreground rounded-xl font-medium flex items-center justify-center gap-2 neon-glow-box hover:bg-primary/90 transition-colors disabled:opacity-50"
+                 className="h-14 w-full rounded-lg neon-glow-box"
               >
                 {isSubmitting ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
                 {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
+               </Button>
             </MagneticButton>
           </form>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isSuccess && (
+          <motion.div
+            className="fixed inset-0 z-[90] flex items-center justify-center bg-background/80 px-6 backdrop-blur-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="message-success-title"
+          >
+            <motion.div
+              className="glass-strong relative w-full max-w-md overflow-hidden rounded-lg border-primary/40 p-9 text-center neon-glow-box"
+              initial={{ opacity: 0, scale: 0.88, y: 24 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 16 }}
+              transition={{ type: 'spring', stiffness: 240, damping: 22 }}
+            >
+              <div className="absolute inset-0 radial-glow opacity-70 pointer-events-none" />
+              <motion.div
+                className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-primary/50 bg-primary/10"
+                initial={{ scale: 0, rotate: -20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.15, type: 'spring', stiffness: 280, damping: 16 }}
+              >
+                <CheckCircle className="h-10 w-10 text-neon-glow" />
+              </motion.div>
+              <div className="relative">
+                <p className="mb-2 font-mono text-xs uppercase text-primary">Transmission complete</p>
+                <h3 id="message-success-title" className="mb-3 text-2xl font-bold text-foreground">Message sent successfully</h3>
+                <p className="mb-7 text-sm leading-relaxed text-muted-foreground">Thank you for reaching out. M. Areeb will get back to you within 24 hours.</p>
+                <Button onClick={() => setIsSuccess(false)} className="h-11 w-full rounded-lg">Done</Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AnimatedSection>
   );
 };
