@@ -8,7 +8,7 @@ import { z } from 'zod';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
-const services = ['Web Development', 'Mobile App', '3D & Interactive', 'UI/UX Design', 'Full-Stack Project', 'Consultation'];
+const services = ['Web Development', 'Mobile App', '3D & Interactive', 'UI/UX Design', 'Digital Marketing', 'Full-Stack Project', 'Consultation'];
 
 const bookingSchema = z.object({
   fullName: z.string().trim().min(1, 'Name is required').max(100),

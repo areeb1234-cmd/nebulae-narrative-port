@@ -51,7 +51,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Areeb
+            M. Areeb
           </motion.h1>
 
           <motion.p

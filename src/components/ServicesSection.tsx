@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
-import { Monitor, Smartphone, Box, Sparkles } from 'lucide-react';
+import { Monitor, Smartphone, Box, Sparkles, Megaphone } from 'lucide-react';
 
 const services = [
   {
@@ -27,6 +27,12 @@ const services = [
     desc: 'User-centered design with prototyping, motion design, and design systems.',
     price: 'From $2,000',
   },
+  {
+    icon: Megaphone,
+    title: 'Digital Marketing',
+    desc: 'Results-focused campaigns, content strategy, SEO, and audience growth across digital channels.',
+    price: 'From $1,500',
+  },
 ];
 
 const ServicesSection = () => {
@@ -46,7 +52,7 @@ const ServicesSection = () => {
           My <span className="gradient-text">Services</span>
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}

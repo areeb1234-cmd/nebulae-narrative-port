@@ -15,7 +15,7 @@
       {
         "name": "get_profile",
         "title": "Get profile",
-        "description": "Get Areeb's public profile: role, public contact details, location, and typical response time.",
+        "description": "Get M. Areeb's public profile: role, public contact details, location, and typical response time.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -32,7 +32,7 @@
       {
         "name": "list_services",
         "title": "List services",
-        "description": "List the services Areeb offers and that can be booked.",
+        "description": "List the services M. Areeb offers and that can be booked.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -49,7 +49,7 @@
       {
         "name": "list_projects",
         "title": "List projects",
-        "description": "List the featured projects in Areeb's portfolio with their tech stacks.",
+        "description": "List the featured projects in M. Areeb's portfolio with their tech stacks.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -66,7 +66,7 @@
       {
         "name": "send_message",
         "title": "Send a message",
-        "description": "Send Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
+        "description": "Send M. Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
         "annotations": {
           "readOnlyHint": false,
           "destructiveHint": false,
@@ -114,7 +114,7 @@
       {
         "name": "request_booking",
         "title": "Request a booking",
-        "description": "Request a service booking with Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
+        "description": "Request a service booking with M. Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
         "annotations": {
           "readOnlyHint": false,
           "destructiveHint": false,

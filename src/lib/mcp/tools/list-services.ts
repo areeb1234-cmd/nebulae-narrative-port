@@ -4,7 +4,7 @@ import { SERVICES } from "../data";
 export default defineTool({
   name: "list_services",
   title: "List services",
-  description: "List the services Areeb offers and that can be booked.",
+  description: "List the services M. Areeb offers and that can be booked.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({

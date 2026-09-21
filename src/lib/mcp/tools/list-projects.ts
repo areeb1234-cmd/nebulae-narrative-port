@@ -4,7 +4,7 @@ import { PROJECTS } from "../data";
 export default defineTool({
   name: "list_projects",
   title: "List projects",
-  description: "List the featured projects in Areeb's portfolio with their tech stacks.",
+  description: "List the featured projects in M. Areeb's portfolio with their tech stacks.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({

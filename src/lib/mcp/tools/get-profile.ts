@@ -5,7 +5,7 @@ export default defineTool({
   name: "get_profile",
   title: "Get profile",
   description:
-    "Get Areeb's public profile: role, public contact details, location, and typical response time.",
+    "Get M. Areeb's public profile: role, public contact details, location, and typical response time.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({

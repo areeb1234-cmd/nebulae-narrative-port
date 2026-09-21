@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid sm:grid-cols-3 gap-8 items-center">
           <div>
-            <span className="text-2xl font-bold gradient-text font-mono block mb-2">{'<Areeb />'}</span>
+            <span className="text-2xl font-bold gradient-text font-mono block mb-2">{'<M. Areeb />'}</span>
             <p className="text-xs text-muted-foreground">Creative Developer</p>
           </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
               Back to top ↑
             </motion.a>
             <p className="text-xs text-muted-foreground flex items-center justify-end gap-1">
-              © {new Date().getFullYear()} Made with <Heart size={10} className="text-primary" /> by Areeb
+              © {new Date().getFullYear()} Made with <Heart size={10} className="text-primary" /> by M. Areeb
             </p>
           </div>
         </div>

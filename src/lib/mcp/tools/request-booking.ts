@@ -7,7 +7,7 @@ export default defineTool({
   name: "request_booking",
   title: "Request a booking",
   description:
-    "Request a service booking with Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
+    "Request a service booking with M. Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
   inputSchema: {
     full_name: z.string().trim().min(1).max(100).describe("Requester's full name."),
     email: z.string().trim().email().max(255).describe("Requester's email address."),
@@ -50,7 +50,7 @@ export default defineTool({
       content: [
         {
           type: "text" as const,
-          text: `Booking request for ${service} on ${booking_date} submitted. Areeb will confirm by email at ${email}.`,
+          text: `Booking request for ${service} on ${booking_date} submitted. M. Areeb will confirm by email at ${email}.`,
         },
       ],
       structuredContent: { booking: { full_name, email, service, booking_date } },

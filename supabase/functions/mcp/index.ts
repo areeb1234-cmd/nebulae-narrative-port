@@ -26,6 +26,10 @@ var SERVICES = [
     name: "UI/UX Design",
     description: "User-centered design with prototyping, motion design, and design systems."
   },
+  {
+    name: "Digital Marketing",
+    description: "Results-focused campaigns, content strategy, SEO, and audience growth across digital channels."
+  },
   { name: "Full-Stack Project", description: "End-to-end product build, frontend through backend." },
   { name: "Consultation", description: "Advice session on architecture, performance, or design." }
 ];
@@ -53,11 +57,11 @@ var PROJECTS = [
   }
 ];
 var PROFILE = {
-  name: "Areeb",
+  name: "M. Areeb",
   role: "Developer \u2014 web, mobile, and interactive 3D experiences",
   email: "alliareeb650@gmail.com",
-  phone: "033066528075",
-  location: "North Karachi, Sector 11-C, Karachi, Pakistan",
+  phone: "03306528075",
+  location: "North Karachi, Karachi, Pakistan",
   responseTime: "Usually replies within 24 hours"
 };
 
@@ -65,7 +69,7 @@ var PROFILE = {
 var get_profile_default = defineTool({
   name: "get_profile",
   title: "Get profile",
-  description: "Get Areeb's public profile: role, public contact details, location, and typical response time.",
+  description: "Get M. Areeb's public profile: role, public contact details, location, and typical response time.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
@@ -88,7 +92,7 @@ import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@3.0.0";
 var list_services_default = defineTool2({
   name: "list_services",
   title: "List services",
-  description: "List the services Areeb offers and that can be booked.",
+  description: "List the services M. Areeb offers and that can be booked.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
@@ -109,7 +113,7 @@ import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@3.0.0";
 var list_projects_default = defineTool3({
   name: "list_projects",
   title: "List projects",
-  description: "List the featured projects in Areeb's portfolio with their tech stacks.",
+  description: "List the featured projects in M. Areeb's portfolio with their tech stacks.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
@@ -185,7 +189,7 @@ function supabaseAnon() {
 var send_message_default = defineTool4({
   name: "send_message",
   title: "Send a message",
-  description: "Send Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
+  description: "Send M. Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
   inputSchema: {
     name: z.string().trim().min(1).max(100).describe("Sender's full name."),
     email: z.string().trim().email().max(255).describe("Sender's email address."),
@@ -200,7 +204,7 @@ var send_message_default = defineTool4({
       content: [
         {
           type: "text",
-          text: `Message sent to Areeb. He usually replies within 24 hours at ${email}.`
+          text: `Message sent to M. Areeb. He usually replies within 24 hours at ${email}.`
         }
       ]
     };
@@ -213,7 +217,7 @@ import { z as z2 } from "npm:zod@3.25.76";
 var request_booking_default = defineTool5({
   name: "request_booking",
   title: "Request a booking",
-  description: "Request a service booking with Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
+  description: "Request a service booking with M. Areeb on a chosen weekday. Use list_services first to pick a valid service name.",
   inputSchema: {
     full_name: z2.string().trim().min(1).max(100).describe("Requester's full name."),
     email: z2.string().trim().email().max(255).describe("Requester's email address."),
@@ -251,7 +255,7 @@ var request_booking_default = defineTool5({
       content: [
         {
           type: "text",
-          text: `Booking request for ${service} on ${booking_date} submitted. Areeb will confirm by email at ${email}.`
+          text: `Booking request for ${service} on ${booking_date} submitted. M. Areeb will confirm by email at ${email}.`
         }
       ],
       structuredContent: { booking: { full_name, email, service, booking_date } }
@@ -264,7 +268,7 @@ var mcp_default = defineMcp({
   name: "astral-canvas",
   title: "Astral Canvas",
   version: "0.1.0",
-  instructions: "Public tools for Areeb's developer portfolio. Use get_profile for contact details, list_services and list_projects to explore his work, send_message to contact him, and request_booking to reserve a weekday service slot. Always collect the person's real name, email, and (for bookings) phone number before submitting.",
+  instructions: "Public tools for M. Areeb's developer portfolio. Use get_profile for contact details, list_services and list_projects to explore his work, send_message to contact him, and request_booking to reserve a weekday service slot. Always collect the person's real name, email, and (for bookings) phone number before submitting.",
   tools: [
     get_profile_default,
     list_services_default,
