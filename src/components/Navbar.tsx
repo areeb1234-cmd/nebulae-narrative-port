@@ -22,7 +22,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto glass rounded-full px-6 py-3 flex items-center justify-between">
         <a href="#" className="text-xl font-bold gradient-text font-mono">
-          {'<Areeb />'}
+          {'<M. Areeb />'}
         </a>
 
         {/* Desktop nav */}
@@ -38,7 +38,8 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#"
+            href="/m-areeb-resume.pdf"
+            download="M-Areeb-Resume.pdf"
             className="flex items-center gap-2 px-4 py-2 text-sm bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300"
           >
             <Download size={14} />

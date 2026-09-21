@@ -19,6 +19,11 @@ export const SERVICES = [
     description:
       "User-centered design with prototyping, motion design, and design systems.",
   },
+  {
+    name: "Digital Marketing",
+    description:
+      "Results-focused campaigns, content strategy, SEO, and audience growth across digital channels.",
+  },
   { name: "Full-Stack Project", description: "End-to-end product build, frontend through backend." },
   { name: "Consultation", description: "Advice session on architecture, performance, or design." },
 ] as const;
@@ -53,10 +58,10 @@ export const PROJECTS = [
 ] as const;
 
 export const PROFILE = {
-  name: "Areeb",
+  name: "M. Areeb",
   role: "Developer — web, mobile, and interactive 3D experiences",
   email: "alliareeb650@gmail.com",
-  phone: "033066528075",
-  location: "North Karachi, Sector 11-C, Karachi, Pakistan",
+  phone: "03306528075",
+  location: "North Karachi, Karachi, Pakistan",
   responseTime: "Usually replies within 24 hours",
 } as const;

@@ -26,7 +26,7 @@ const HeroSection = () => {
           <StaggeredText text="Hello, I'm" delay={0.5} />
           <br />
           <span className="gradient-text">
-            <StaggeredText text="Areeb" delay={0.9} />
+            <StaggeredText text="M. Areeb" delay={0.9} />
           </span>
         </h1>
 

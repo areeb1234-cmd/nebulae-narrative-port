@@ -6,7 +6,7 @@ export default defineTool({
   name: "send_message",
   title: "Send a message",
   description:
-    "Send Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
+    "Send M. Areeb a message through the portfolio contact form. Ask the sender for their real name and email first.",
   inputSchema: {
     name: z.string().trim().min(1).max(100).describe("Sender's full name."),
     email: z.string().trim().email().max(255).describe("Sender's email address."),
@@ -23,7 +23,7 @@ export default defineTool({
       content: [
         {
           type: "text" as const,
-          text: `Message sent to Areeb. He usually replies within 24 hours at ${email}.`,
+          text: `Message sent to M. Areeb. He usually replies within 24 hours at ${email}.`,
         },
       ],
     };

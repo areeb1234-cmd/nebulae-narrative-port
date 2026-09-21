@@ -8,7 +8,7 @@ interface MagneticButtonProps {
 }
 
 const MagneticButton = ({ children, className = '', onClick }: MagneticButtonProps) => {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: MouseEvent) => {
     if (!ref.current) return;
@@ -25,7 +25,7 @@ const MagneticButton = ({ children, className = '', onClick }: MagneticButtonPro
 
   return (
     <motion.div
-      ref={ref as any}
+      ref={ref}
       className={`relative transition-transform duration-300 ease-out inline-block ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

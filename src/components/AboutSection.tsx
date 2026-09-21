@@ -40,7 +40,7 @@ const AboutSection = () => {
               Crafting the <span className="gradient-text">future</span> of web
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              I'm Areeb — a passionate developer who lives at the intersection of design and technology.
+              I'm M. Areeb — a passionate developer who lives at the intersection of design and technology.
               With expertise in modern web frameworks and 3D graphics, I create digital experiences
               that push boundaries and captivate users.
             </p>
