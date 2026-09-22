@@ -53,8 +53,21 @@ const BookingSection = () => {
 
       if (error) throw error;
 
+      const body = [
+        `Name: ${result.data.fullName}`,
+        `Email: ${result.data.email}`,
+        `Phone: ${result.data.phone}`,
+        `Service: ${result.data.service}`,
+        `Date: ${result.data.date.toISOString().split('T')[0]}`,
+        '',
+        result.data.message || '',
+      ].join('\n');
+      window.location.href = `mailto:alliareeb650@gmail.com?subject=${encodeURIComponent(
+        `New booking request: ${result.data.service}`,
+      )}&body=${encodeURIComponent(body)}`;
+
       setIsSuccess(true);
-      toast({ title: 'Booking confirmed!', description: "We'll send you a confirmation email shortly." });
+      toast({ title: 'Booking confirmed!', description: 'Your booking request has been saved and emailed.' });
     } catch {
       toast({ title: 'Error', description: 'Something went wrong. Please try again.', variant: 'destructive' });
     } finally {
