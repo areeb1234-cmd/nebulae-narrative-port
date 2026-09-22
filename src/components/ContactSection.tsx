@@ -46,6 +46,16 @@ const ContactSection = () => {
 
       if (error) throw error;
 
+      const body = [
+        `Name: ${result.data.name}`,
+        `Email: ${result.data.email}`,
+        '',
+        result.data.message,
+      ].join('\n');
+      window.location.href = `mailto:alliareeb650@gmail.com?subject=${encodeURIComponent(
+        `Portfolio message: ${result.data.subject}`,
+      )}&body=${encodeURIComponent(body)}`;
+
       setIsSuccess(true);
       setForm({ name: '', email: '', subject: '', message: '' });
     } catch {
