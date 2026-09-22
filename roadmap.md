@@ -1,9 +1,9 @@
 # Roadmap
 
-- [ ] Apply M. Areeb branding and exact contact details everywhere
-- [ ] Create and connect themed PDF resume
-- [ ] Simplify project click interactions
-- [ ] Add Digital Marketing service
-- [ ] Upgrade testimonials slider
-- [ ] Add animated contact success state
-- [ ] Verify PDF, desktop/mobile views, download, links, and form feedback
+- [x] Apply M. Areeb branding and exact contact details everywhere
+- [x] Create and connect themed PDF resume
+- [x] Simplify project click interactions
+- [x] Add Digital Marketing service
+- [x] Upgrade testimonials slider
+- [x] Add animated contact success state
+- [x] Verify PDF, desktop/mobile views, download, links, and form feedback
