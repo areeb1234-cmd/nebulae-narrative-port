@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
-import { ArrowUpRight, BarChart3, BrainCircuit, Music2, WalletCards } from 'lucide-react';
+import { ArrowUpRight, PawPrint, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -13,32 +13,18 @@ import {
 
 const projects = [
   {
-    title: 'Quantum Dashboard',
-    desc: 'Real-time analytics platform with 3D data visualization and predictive AI insights.',
-    tags: ['React', 'Three.js', 'Python', 'AI'],
-    icon: BarChart3,
-    metric: 'Live intelligence',
+    title: 'FurEver Care',
+    desc: 'A next-generation pet wellness and AI care platform built for the Aptech TechWiz 6 competition. Features complete UI/UX design, emergency triage protocols, and integrated AI tools.',
+    tags: ['React', 'Vite', 'Tailwind CSS'],
+    icon: PawPrint,
+    metric: 'Aptech TechWiz 6',
   },
   {
-    title: 'Neural Interface',
-    desc: 'Brain-computer interface prototype for accessible web navigation using ML models.',
-    tags: ['TensorFlow', 'WebGL', 'Node.js'],
-    icon: BrainCircuit,
-    metric: 'Accessible by design',
-  },
-  {
-    title: 'Synthwave Studio',
-    desc: 'Web-based music production tool with real-time audio processing and visual feedback.',
-    tags: ['Web Audio', 'Canvas', 'React'],
-    icon: Music2,
-    metric: 'Zero-latency workflow',
-  },
-  {
-    title: 'CryptoVerse',
-    desc: 'Decentralized portfolio tracker with animated charts and real-time market data.',
-    tags: ['Solidity', 'React', 'D3.js'],
-    icon: WalletCards,
-    metric: 'Markets in motion',
+    title: 'Justicia',
+    desc: 'A full-stack legal services platform featuring comprehensive lawyer profiling, role-based access, and a seamless appointment booking system.',
+    tags: ['PHP', 'MySQL', 'Web Development'],
+    icon: Scale,
+    metric: 'Full-stack legal platform',
   },
 ];
 

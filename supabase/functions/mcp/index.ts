@@ -36,24 +36,14 @@ var SERVICES = [
 var BOOKABLE_SERVICES = SERVICES.map((service) => service.name);
 var PROJECTS = [
   {
-    name: "Quantum Dashboard",
-    description: "Real-time analytics platform with 3D data visualization and predictive AI insights.",
-    tech: ["React", "Three.js", "Python", "AI"]
+    name: "FurEver Care",
+    description: "A next-generation pet wellness and AI care platform built for the Aptech TechWiz 6 competition. Features complete UI/UX design, emergency triage protocols, and integrated AI tools.",
+    tech: ["React", "Vite", "Tailwind CSS"]
   },
   {
-    name: "Neural Interface",
-    description: "Brain-computer interface prototype for accessible web navigation using ML models.",
-    tech: ["TensorFlow", "WebGL", "Node.js"]
-  },
-  {
-    name: "Synthwave Studio",
-    description: "Web-based music production tool with real-time audio processing and visual feedback.",
-    tech: ["Web Audio", "Canvas", "React"]
-  },
-  {
-    name: "CryptoVerse",
-    description: "Decentralized portfolio tracker with animated charts and real-time market data.",
-    tech: ["Solidity", "React", "D3.js"]
+    name: "Justicia",
+    description: "A full-stack legal services platform featuring comprehensive lawyer profiling, role-based access, and a seamless appointment booking system.",
+    tech: ["PHP", "MySQL", "Web Development"]
   }
 ];
 var PROFILE = {

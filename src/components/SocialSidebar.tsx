@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const socials = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com/areeb1234-cmd', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/muhammad-areeb-dev/', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://www.instagram.com/m.areeb52/', label: 'Instagram' },
 ];
 
 const SocialSidebar = () => {
@@ -20,6 +19,8 @@ const SocialSidebar = () => {
         <motion.a
           key={social.label}
           href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:neon-border transition-all duration-300"
           data-magnetic
           whileHover={{ scale: 1.2 }}
