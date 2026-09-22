@@ -18,6 +18,7 @@ const projects = [
     tags: ['React', 'Vite', 'Tailwind CSS'],
     icon: PawPrint,
     metric: 'Aptech TechWiz 6',
+    liveUrl: 'https://furever-care-gules.vercel.app/',
   },
   {
     title: 'Justicia',
@@ -25,6 +26,7 @@ const projects = [
     tags: ['PHP', 'MySQL', 'Web Development'],
     icon: Scale,
     metric: 'Full-stack legal platform',
+    liveUrl: undefined as string | undefined,
   },
 ];
 
@@ -76,13 +78,42 @@ const ProjectsSection = () => {
       </div>
 
       <Dialog open={Boolean(activeProject)} onOpenChange={(open) => !open && setActiveProject(null)}>
-        <DialogContent className="glass-strong overflow-hidden rounded-lg border-primary/30 p-0 sm:max-w-xl">
+        <DialogContent className="glass-strong max-h-[90vh] overflow-y-auto rounded-lg border-primary/30 p-0 sm:max-w-3xl">
           {activeProject && (
             <>
-              <div className="relative flex h-48 items-center justify-center border-b border-border bg-secondary/30">
-                <div className="absolute inset-0 radial-glow" />
-                <activeProject.icon className="relative h-24 w-24 text-neon-glow" strokeWidth={1} />
-              </div>
+              {activeProject.liveUrl ? (
+                <div className="relative border-b border-border bg-secondary/30 p-3">
+                  <div className="absolute inset-0 radial-glow opacity-60 pointer-events-none" />
+                  <div className="relative overflow-hidden rounded-lg border border-primary/25 bg-background/60">
+                    <div className="flex items-center gap-2 border-b border-border/60 px-4 py-2">
+                      <span className="h-2.5 w-2.5 rounded-full bg-primary/60" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-primary/35" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-primary/20" />
+                      <span className="ml-2 truncate font-mono text-[11px] text-muted-foreground">{activeProject.liveUrl}</span>
+                    </div>
+                    <iframe
+                      src={activeProject.liveUrl}
+                      title={`${activeProject.title} live preview`}
+                      loading="lazy"
+                      className="h-[420px] w-full border-0 bg-background sm:h-[520px]"
+                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                    />
+                  </div>
+                  <a
+                    href={activeProject.liveUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="relative mt-3 inline-flex items-center gap-1.5 font-mono text-xs uppercase text-primary hover:text-neon-glow transition-colors"
+                  >
+                    Open live site <ArrowUpRight size={14} />
+                  </a>
+                </div>
+              ) : (
+                <div className="relative flex h-48 items-center justify-center border-b border-border bg-secondary/30">
+                  <div className="absolute inset-0 radial-glow" />
+                  <activeProject.icon className="relative h-24 w-24 text-neon-glow" strokeWidth={1} />
+                </div>
+              )}
               <DialogHeader className="p-7">
                 <span className="mb-2 font-mono text-xs uppercase text-primary">{activeProject.metric}</span>
                 <DialogTitle className="text-3xl text-foreground">{activeProject.title}</DialogTitle>
